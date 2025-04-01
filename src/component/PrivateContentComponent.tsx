@@ -1,15 +1,7 @@
 import {
-  maskBgStyle,
-  galleryTxtStyle,
-  galleryImgStyle,
-  galleryAreaStyle,
   contentBodyStyle,
   contentContainerStyle,
   innerContentStyle,
-  contentImgStyle,
-  contentImgWrapperStyle,
-  componentBoxStyle,
-  componentTopBoxStyle,
   uioTilteBulletStyle,
   uioTitleStyle,
 } from "style/contentComponentStyle";
@@ -32,7 +24,11 @@ import private16 from "assets/private16.jpeg";
 import private17 from "assets/private17.jpeg";
 import private18 from "assets/private18.jpeg";
 import private19 from "assets/private19.jpeg";
-import { BottomNavComponent, imgProps } from "./ContentComponent";
+import {
+  BottomNavComponent,
+  ContentBoxComponent,
+  GalleryComponent,
+} from "./ContentComponent";
 
 export const PrivateContentContainerComponent = () => {
   // fc_container
@@ -67,43 +63,6 @@ export const PrivateContentContainerComponent = () => {
           <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
-    </div>
-  );
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const ContentBoxComponent = (props: any) => {
-  // component_box
-  return (
-    <div css={props.isMargin ? componentBoxStyle : componentTopBoxStyle}>
-      {props.children}
-    </div>
-  );
-};
-
-export const GalleryComponent = (props: imgProps) => {
-  // gallery_area
-  return (
-    <div css={galleryAreaStyle}>
-      <ul style={{ margin: "0", padding: "0" }}>
-        <li>
-          <div css={galleryImgStyle}>
-            <a css={contentImgWrapperStyle} href="#">
-              <img css={contentImgStyle} src={props.url} alt="" />
-            </a>
-          </div>
-          <div css={maskBgStyle}></div>
-          <div css={galleryTxtStyle}></div>
-        </li>
-      </ul>
-    </div>
-  );
-};
-
-export const DivisionComponent = () => {
-  return (
-    <div style={{ backgroundColor: "#fff" }}>
-      <div style={{ width: "100%", height: "10px" }}></div>
     </div>
   );
 };

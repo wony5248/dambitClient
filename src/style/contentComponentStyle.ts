@@ -12,6 +12,11 @@ export const contentBodyStyle = css`
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 40px 50px;
+    min-height: 550px;
+  }
 `;
 
 export const uioTitleStyle = css`
@@ -22,6 +27,16 @@ export const uioTitleStyle = css`
   color: #824b4b;
   font-weight: 400;
   letter-spacing: -0.8px;
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    content: "";
+    width: 1100px;
+    height: 1px;
+    background-color: #ebebeb;
+  }
 `;
 
 export const uioTilteBulletStyle = css`
@@ -31,6 +46,7 @@ export const uioTilteBulletStyle = css`
   width: 100%;
   height: 1px;
   z-index: 1;
+  background-color: #824b4b !important;
 `;
 
 export const innerContentStyle = css`
@@ -126,17 +142,19 @@ export const btnBackGroundStyle = css`
 `;
 
 export const btnBackGroundBeforeStyle = css`
-  &::before {
-    background-color: #fff;
-    display: inline-block;
-    width: 1px;
-    height: 30px;
-    margin: -15px 0 0 0;
-    background-color: white;
-    vertical-align: top;
-    content: "";
-    position: absolute;
-    top: 50%;
+  @media (min-width: 768px) {
+    &::before {
+      background-color: #fff;
+      display: inline-block;
+      width: 1px;
+      height: 30px;
+      margin: -15px 0 0 0;
+      background-color: white;
+      vertical-align: top;
+      content: "";
+      position: absolute;
+      top: 50%;
+    }
   }
 `;
 
@@ -147,6 +165,11 @@ export const btnIcStyle = css`
   padding: 0 15px;
   text-align: center;
   border-right: 0;
+  @media (max-width: 768px) {
+    height: 45px;
+    line-height: 45px;
+    text-align: left;
+  }
 `;
 
 export const inStyle = css`
@@ -179,8 +202,8 @@ export const icStyle = css`
   display: inline-block;
   font-style: normal;
   line-height: 1;
-  color: #888;
-  font-size: 40px;
-  letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
+  &::after {
+    content: "●";
+  }
 `;

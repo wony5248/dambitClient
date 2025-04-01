@@ -7,18 +7,21 @@ import {
 import { themeBackgroundStyle } from "style/globalStyle";
 
 import { EmotionJSX } from "@emotion/react/dist/declarations/src/jsx-namespace";
+import { ChildProps } from "./DialogComponent";
 
 export type FloatingProps = {
   text: string;
   url?: string;
   children: EmotionJSX.Element;
+  newWindow?: boolean;
+  childProps?: ChildProps;
 };
 
-export const FloatingComponent = () => {
+export const FloatingComponent = (props: ChildProps) => {
   // btn_wrap
   return (
     <ul css={floatingItemStyle}>
-      <FloatingListComponent text="전화">
+      <FloatingListCallComponent text="전화" childProps={props} url="#">
         <svg
           viewBox="-5 -5 34 34"
           fill="none"
@@ -40,8 +43,8 @@ export const FloatingComponent = () => {
             ></path>
           </g>
         </svg>
-      </FloatingListComponent>
-      <FloatingListComponent text="톡톡">
+      </FloatingListCallComponent>
+      {/* <FloatingListComponent text="톡톡">
         <svg
           fill="#ffffff"
           width="64px"
@@ -60,8 +63,8 @@ export const FloatingComponent = () => {
             <path d="M13.93,5.92l-7.79,0h0A1.25,1.25,0,0,0,4.91,7.09l0,8.5a.38.38,0,0,0,.23.35.4.4,0,0,0,.15,0,.35.35,0,0,0,.26-.12c.7-.71,1.93-1.72,2.46-1.72H8l5.92,0h0A1.23,1.23,0,0,0,15.1,13l0-5.8A1.23,1.23,0,0,0,13.93,5.92Zm.42,7a.47.47,0,0,1-.14.33.59.59,0,0,1-.33.14L8,13.38c-.71,0-1.69.75-2.34,1.33l0-7.62a.47.47,0,0,1,.47-.47h0l7.78,0a.44.44,0,0,1,.33.14.48.48,0,0,1,.14.34Z"></path>
           </g>
         </svg>
-      </FloatingListComponent>
-      <FloatingListComponent text="오시는길">
+      </FloatingListComponent> */}
+      <FloatingListComponent text="오시는길" url="/direction">
         <svg
           viewBox="-8 -8 32 32"
           fill="none"
@@ -86,6 +89,7 @@ export const FloatingComponent = () => {
       <FloatingListComponent
         text="예약신청"
         url="https://map.naver.com/p/entry/place/1728293137?lng=127.6728526&lat=34.7446273&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F6%2Fbizes%2F147337%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh"
+        newWindow={true}
       >
         <svg
           viewBox="-5 -5 34 34"
@@ -118,8 +122,36 @@ export const FloatingListComponent = (props: FloatingProps) => {
     <li>
       <a
         href={props.url}
-        target="_blank"
+        target={props.newWindow ? "_blank" : "_self"}
         css={[linkItemStyle, themeBackgroundStyle]}
+      >
+        <span
+          css={linkIconStyle}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {props.children}
+        </span>
+        <span css={linkTextStyle}>{props.text}</span>
+      </a>
+    </li>
+  );
+};
+
+export const FloatingListCallComponent = (props: FloatingProps) => {
+  return (
+    <li>
+      <a
+        href={props.url}
+        target={props.newWindow ? "_blank" : "_self"}
+        css={[linkItemStyle, themeBackgroundStyle]}
+        onClick={(e) => {
+          e.preventDefault();
+          props.childProps?.setIsOpen(true);
+        }}
       >
         <span
           css={linkIconStyle}

@@ -29,7 +29,7 @@ export const txtMap: { [key: number]: string } = {
   4: "예약/FAQ",
   5: "오시는 길",
   6: "요트 갤러리",
-  7: "term",
+  7: "이용약관",
 };
 
 export const urlMap: { [key: number]: string } = {
@@ -89,7 +89,15 @@ export const BottomLinkComponent = (props: LinkProps) => {
                   : [btnBackGroundBeforeStyle, btnBackGroundStyle]
               }
             >
-              <a href={`/${urlMap[item]}`} css={btnIcStyle}>
+              <a
+                href={
+                  urlMap[item] === "reservation"
+                    ? "https://map.naver.com/p/entry/place/1728293137?lng=127.6728526&lat=34.7446273&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F6%2Fbizes%2F147337%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh"
+                    : `/${urlMap[item]}`
+                }
+                target={urlMap[item] === "reservation" ? "_blank" : "_self"}
+                css={btnIcStyle}
+              >
                 <div css={inStyle}>
                   <span css={btnTextStyle}>{txtMap[item]}</span>
                   <span css={icStyle}>
@@ -136,7 +144,7 @@ export const GalleryComponent = (props: imgProps) => {
 
 export const DivisionComponent = () => {
   return (
-    <div style={{ backgroundColor: "#fff" }}>
+    <div style={{ backgroundColor: "#faf0f0" }}>
       <div style={{ width: "100%", height: "10px" }}></div>
     </div>
   );

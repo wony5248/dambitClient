@@ -4,7 +4,14 @@ export const topNavDivStyle = css`
   position: relative;
   z-index: 9999;
   border-bottom: 1px solid #ebebeb;
-  background-color: #fafafa;
+  background-color: #faf0f0;
+`;
+
+export const topNavStickyStyle = css`
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
 `;
 
 export const headerSubMenuWrap = css`
@@ -16,7 +23,7 @@ export const headerSubMenuWrap = css`
 `;
 
 export const sectionHeaderWrapStyle = css`
-  background-color: #faf5f5;
+  background-color: #faf0f0;
 `;
 
 export const sectionHeaderStyle = css`
@@ -91,6 +98,10 @@ export const navigationListStyle = css`
   margin-left: -10px;
   height: 28px;
   overflow: auto;
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    overflow: scroll;
+  }
 `;
 
 export const navigationListItemStyle = css`

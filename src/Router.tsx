@@ -1,7 +1,6 @@
-import { GalleryContentContainerComponent } from "component/GalleryComponent";
+import { GalleryContentContainerComponent } from "component/YachtGalleryContentComponent";
 import { HomeContentContainerComponent } from "component/HomeContentComponent";
 import { IntroContentContainerComponent } from "component/IntroContentComponent";
-import MapComponent from "component/MapComponent";
 import { PrivateContentContainerComponent } from "component/PrivateContentComponent";
 import { PublicContentContainerComponent } from "component/PublicContentComponent";
 import { ReservationComponent } from "component/ReservationComponent";
@@ -9,6 +8,7 @@ import { SpecialContentContainerComponent } from "component/SpecialContentCompon
 import { TermContentComponent } from "component/TermComponent";
 import { JSX, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MapComponent } from "component/MapComponent";
 
 /**
  * 프로젝트 라우팅을 정의한 라우터 컴포넌트입니다.

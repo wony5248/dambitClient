@@ -7,6 +7,7 @@ import {
 } from "style/contentComponentStyle";
 import {} from "style/topNavBarStyle";
 import term from "assets/term.jpeg";
+import term2 from "assets/term2.jpeg";
 import {
   BottomNavComponent,
   ContentBoxComponent,
@@ -25,6 +26,7 @@ export const TermContentComponent = () => {
         <div css={innerContentStyle}>
           <ContentBoxComponent isMargin={true}>
             <GalleryComponent url={term}></GalleryComponent>
+            <GalleryComponent url={term2}></GalleryComponent>
           </ContentBoxComponent>
           <BottomNavComponent></BottomNavComponent>
         </div>

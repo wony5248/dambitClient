@@ -8,8 +8,8 @@ import {
 import gall1 from "assets/gall1.jpeg";
 import gall2 from "assets/gall2.jpeg";
 import gall3 from "assets/gall3.jpeg";
-import gall4 from "assets/gall5.jpeg";
-import gall5 from "assets/gall6.jpeg";
+import gall4 from "assets/gall4.jpeg";
+import gall5 from "assets/gall5.jpeg";
 import gall6 from "assets/gall6.jpeg";
 import gall7 from "assets/gall7.jpeg";
 import gall8 from "assets/gall8.jpeg";
