@@ -15,7 +15,7 @@ export const contentBodyStyle = css`
   @media (max-width: 768px) {
     width: 100%;
     padding: 0 40px 50px;
-    min-height: 550px;
+    min-height: 150px;
   }
 `;
 
@@ -34,6 +34,9 @@ export const uioTitleStyle = css`
     bottom: -10px;
     content: "";
     width: 1100px;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
     height: 1px;
     background-color: #ebebeb;
   }
@@ -109,6 +112,9 @@ export const contentImgWrapperStyle = css`
 
 export const componentTopBoxStyle = css`
   margin-top: 40px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
 export const componentBoxStyle = css`

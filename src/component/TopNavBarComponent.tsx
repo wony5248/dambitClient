@@ -13,7 +13,6 @@ import {
   areaInnerStyle,
   areaLogoStyle,
   areaNavbarStyle,
-  headerSubMenuWrap,
   itemBarStyle,
   navigationFrameStyle,
   navigationListItemStyle,
@@ -198,7 +197,7 @@ export const TopNavComponent: React.FC = () => {
           </div>
         </div>
       </div>
-      <div css={headerSubMenuWrap}></div>
+      {/* <div css={headerSubMenuWrap}></div> */}
     </div>
   );
 };

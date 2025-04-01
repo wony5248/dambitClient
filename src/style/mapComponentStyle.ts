@@ -79,6 +79,11 @@ export const dlStyle = css`
     clear: both;
     content: "";
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
 `;
 
 export const dtStyle = css`
@@ -87,6 +92,9 @@ export const dtStyle = css`
   padding-left: 10px;
   font-size: 15px;
   color: #111;
+  @media (max-width: 768px) {
+    padding-left: 0px;
+  }
 `;
 
 export const dtSpanStyle = css`
@@ -101,8 +109,13 @@ export const dtSpanStyle = css`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: modoo;
-  &::after {
-    content: "";
+  @media (min-width: 768px) {
+    &::after {
+      content: "";
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 0px;
   }
 `;
 
@@ -111,13 +124,18 @@ export const ddStyle = css`
   color: #666;
   overflow: hidden;
   padding-right: 10px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    float: left;
+    padding-left: 0px;
+  }
 `;
 
 export const subTitleStyle = css`
   display: inline-block;
   min-width: 40px;
   margin-right: 20px;
-  color: #999;
+  color: #666;
 `;
 
 export const subTextStyle = css`
@@ -136,7 +154,7 @@ export const subTextStyle = css`
 export const subDescriptionStyle = css`
   margin-top: 8px;
   margin-left: 60px;
-  color: #999;
+  color: #666;
   display: block;
 `;
 
