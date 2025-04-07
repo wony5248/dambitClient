@@ -31,7 +31,7 @@ interface NaverStaticMapProps {
   zoom?: number;
 }
 
-const CLIENT_ID = "5v6c7tldgi"; // 네이버 API Client ID
+// const CLIENT_ID = "4zvrocdjj8"; // 네이버 API Client ID
 let mapInstance: naver.maps.Map | undefined = undefined;
 const loadScript = (src: string, callback: () => void) => {
   const script = document.createElement("script");
@@ -51,7 +51,6 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
   const curWidth = useWindowSize();
   width = curWidth < 768 ? 600 : 1100;
   height = curWidth < 768 ? 600 : 400;
-  const [isMapLoaded, setMapLoaded] = useState(false);
 
   const initMap = () => {
     // 추가 옵션 설정
@@ -81,9 +80,6 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
       mapInstance?.setCenter(new naver.maps.LatLng(latitude, longitude));
       mapInstance?.setZoom(zoom);
     });
-
-    // 지도 로드 완료
-    setMapLoaded(true);
   };
 
   useEffect(() => {
@@ -106,13 +102,7 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
         </h3>
         <div css={innerContentStyle}>
           <ContentBoxComponent isMargin={true}>
-            {/* <img
-              src={mapUrl}
-              alt="Naver Static Map"
-              width={"100%"}
-              height={"100%"}
-            /> */}
-            <div id="map" style={{ width: "100%", height: "400px" }}></div>
+            {<div id="map" style={{ width: "100%", height: "400px" }}></div>}
             <div></div>
           </ContentBoxComponent>
           <ContentBoxComponent>
