@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   contentContainerStyle,
   contentBodyStyle,
@@ -20,6 +21,7 @@ import {
   subTitleStyle,
 } from "style/mapComponentStyle";
 import useWindowSize from "hooks/useWindowSize";
+import { useState, useEffect } from "react";
 
 interface NaverStaticMapProps {
   width?: string | number;
@@ -30,6 +32,14 @@ interface NaverStaticMapProps {
 }
 
 const CLIENT_ID = "5v6c7tldgi"; // 네이버 API Client ID
+let mapInstance: naver.maps.Map | undefined = undefined;
+const loadScript = (src: string, callback: () => void) => {
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = src;
+  script.onload = () => callback();
+  document.head.appendChild(script);
+};
 
 export const MapComponent: React.FC<NaverStaticMapProps> = ({
   width,
@@ -41,7 +51,52 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
   const curWidth = useWindowSize();
   width = curWidth < 768 ? 600 : 1100;
   height = curWidth < 768 ? 600 : 400;
-  const mapUrl = `https://maps.apigw.ntruss.com/map-static/v2/raster-cors?w=${width}&h=${height}&center=${longitude},${latitude}&level=${zoom}&X-NCP-APIGW-API-KEY-ID=${CLIENT_ID}&markers=color:red|type:d|size:mid|pos:127.6724058%2034.7452342`;
+  const [isMapLoaded, setMapLoaded] = useState(false);
+
+  const initMap = () => {
+    // 추가 옵션 설정
+    const mapOptions = {
+      zoomControl: true,
+      zoomControlOptions: {
+        style: naver.maps.ZoomControlStyle.SMALL,
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+      center: new naver.maps.LatLng(latitude, longitude),
+      zoom,
+    };
+
+    // 지도 초기화 확인
+    if (document.getElementById("map")) {
+      mapInstance = new naver.maps.Map("map", mapOptions);
+    }
+
+    // Marker 생성
+    const marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(latitude, longitude),
+      map: mapInstance,
+    });
+
+    // Marker 클릭 시 지도 초기화
+    naver.maps.Event.addListener(marker, "click", () => {
+      mapInstance?.setCenter(new naver.maps.LatLng(latitude, longitude));
+      mapInstance?.setZoom(zoom);
+    });
+
+    // 지도 로드 완료
+    setMapLoaded(true);
+  };
+
+  useEffect(() => {
+    // 스크립트 로딩 확인
+    if (typeof naver === "undefined") {
+      loadScript(
+        "https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=4zvrocdjj8",
+        initMap
+      );
+    } else {
+      initMap();
+    }
+  }, [latitude, longitude]);
 
   return (
     <div css={contentContainerStyle}>
@@ -51,12 +106,14 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
         </h3>
         <div css={innerContentStyle}>
           <ContentBoxComponent isMargin={true}>
-            <img
+            {/* <img
               src={mapUrl}
               alt="Naver Static Map"
               width={"100%"}
               height={"100%"}
-            />
+            /> */}
+            <div id="map" style={{ width: "100%", height: "400px" }}></div>
+            <div></div>
           </ContentBoxComponent>
           <ContentBoxComponent>
             {curWidth < 768 ? (
@@ -130,7 +187,7 @@ export const DlComponent = () => {
                 }}
               >
                 <a
-                  href="https://map.naver.com/p/directions/-/14212476.9395566,4129230.9412352,%EC%97%AC%EC%88%98%20%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%20%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4,1728293137,PLACE_POI/-/transit?c=20.00,0,0,0,dh"
+                  href="https://map.naver.com/p/entry/place/1728293137?c=20.00,0,0,0,dh"
                   target="_blank"
                 >
                   <span
@@ -169,7 +226,8 @@ export const DlComponent = () => {
                   </span>
                 </a>
                 <a
-                  href="https://map.naver.com/p/entry/place/1728293137?c=20.00,0,0,0,dh"
+                  href="https://map.naver.com/p/directions/-/14212476.9395566,4129230.9412352,%EC%97%AC%EC%88%98%20%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%20%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4,1728293137,PLACE_POI/-/transit?c=20.00,0,0,0,dh
+                  "
                   target="_blank"
                 >
                   <span

@@ -8,6 +8,7 @@ import { themeBackgroundStyle } from "style/globalStyle";
 
 import { EmotionJSX } from "@emotion/react/dist/declarations/src/jsx-namespace";
 import { ChildProps } from "./DialogComponent";
+import useWindowSize from "hooks/useWindowSize";
 
 export type FloatingProps = {
   text: string;
@@ -19,7 +20,10 @@ export type FloatingProps = {
 
 export const FloatingComponent = (props: ChildProps) => {
   // btn_wrap
-  return (
+  const width = useWindowSize();
+  return width < 768 ? (
+    <></>
+  ) : (
     <ul css={floatingItemStyle}>
       <FloatingListCallComponent text="전화" childProps={props} url="#">
         <svg
@@ -45,25 +49,25 @@ export const FloatingComponent = (props: ChildProps) => {
         </svg>
       </FloatingListCallComponent>
       {/* <FloatingListComponent text="톡톡">
-        <svg
-          fill="#ffffff"
-          width="64px"
-          height="64px"
-          viewBox="0 -0.08 20 20"
-          id="Capa_1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path d="M13.93,5.92l-7.79,0h0A1.25,1.25,0,0,0,4.91,7.09l0,8.5a.38.38,0,0,0,.23.35.4.4,0,0,0,.15,0,.35.35,0,0,0,.26-.12c.7-.71,1.93-1.72,2.46-1.72H8l5.92,0h0A1.23,1.23,0,0,0,15.1,13l0-5.8A1.23,1.23,0,0,0,13.93,5.92Zm.42,7a.47.47,0,0,1-.14.33.59.59,0,0,1-.33.14L8,13.38c-.71,0-1.69.75-2.34,1.33l0-7.62a.47.47,0,0,1,.47-.47h0l7.78,0a.44.44,0,0,1,.33.14.48.48,0,0,1,.14.34Z"></path>
-          </g>
-        </svg>
-      </FloatingListComponent> */}
+      <svg
+        fill="#ffffff"
+        width="64px"
+        height="64px"
+        viewBox="0 -0.08 20 20"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        ></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M13.93,5.92l-7.79,0h0A1.25,1.25,0,0,0,4.91,7.09l0,8.5a.38.38,0,0,0,.23.35.4.4,0,0,0,.15,0,.35.35,0,0,0,.26-.12c.7-.71,1.93-1.72,2.46-1.72H8l5.92,0h0A1.23,1.23,0,0,0,15.1,13l0-5.8A1.23,1.23,0,0,0,13.93,5.92Zm.42,7a.47.47,0,0,1-.14.33.59.59,0,0,1-.33.14L8,13.38c-.71,0-1.69.75-2.34,1.33l0-7.62a.47.47,0,0,1,.47-.47h0l7.78,0a.44.44,0,0,1,.33.14.48.48,0,0,1,.14.34Z"></path>
+        </g>
+      </svg>
+    </FloatingListComponent> */}
       <FloatingListComponent text="오시는길" url="/direction">
         <svg
           viewBox="-8 -8 32 32"

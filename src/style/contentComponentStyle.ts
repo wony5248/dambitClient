@@ -112,9 +112,6 @@ export const contentImgWrapperStyle = css`
 
 export const componentTopBoxStyle = css`
   margin-top: 40px;
-  @media (max-width: 768px) {
-    margin-top: 0px;
-  }
 `;
 
 export const componentBoxStyle = css`
