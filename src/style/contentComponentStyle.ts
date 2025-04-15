@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 export const contentContainerStyle = css`
   padding-top: 20px;
-  background-color: #faf0f0;
+  background-color: #f9f5eb;
 `;
 
 export const contentBodyStyle = css`
@@ -24,7 +24,7 @@ export const uioTitleStyle = css`
   position: relative;
   font-size: 20px;
   margin-bottom: 40px;
-  color: #824b4b;
+  color: #4c6e91;
   font-weight: 400;
   letter-spacing: -0.8px;
   &::after {
@@ -49,7 +49,7 @@ export const uioTilteBulletStyle = css`
   width: 100%;
   height: 1px;
   z-index: 1;
-  background-color: #824b4b !important;
+  background-color: #4c6e91 !important;
 `;
 
 export const innerContentStyle = css`
@@ -124,7 +124,7 @@ export const btnWrapStyle = css`
 `;
 
 export const btnThemeV2Style = css`
-  background-color: #ffa099 !important;
+  background-color: #333333 !important;
   display: flex;
   justify-content: space-around;
   margin: 0;
@@ -136,11 +136,12 @@ export const btnThemeV2Style = css`
   }
 `;
 
+// contentbtn bgcolor
 export const btnBackGroundStyle = css`
   float: left;
-  width: 50%;
+  width: 50%;ho
   position: relative;
-  background-color: #ffa099 !important;
+  background-color: #4c6e91 !important;
   opacity: 0.9;
 `;
 
@@ -178,16 +179,19 @@ export const btnIcStyle = css`
 export const inStyle = css`
   position: relative;
   display: inline-block;
+  justify-content: center;
   max-width: 100%;
+  width: 200px;
   height: 100%;
 `;
 
 export const btnTextStyle = css`
   text-overflow: ellipsis;
   overflow: hidden;
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   max-height: 70px;
-  padding: 0 5px 0 30px;
   font-size: 18px;
   letter-spacing: -1.1px;
   color: #fff;

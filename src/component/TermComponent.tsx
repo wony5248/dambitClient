@@ -8,11 +8,7 @@ import {
 import {} from "style/topNavBarStyle";
 import term from "assets/term.jpeg";
 import term2 from "assets/term2.jpeg";
-import {
-  BottomNavComponent,
-  ContentBoxComponent,
-  GalleryComponent,
-} from "./ContentComponent";
+import { ContentBoxComponent, GalleryComponent } from "./ContentComponent";
 
 export const TermContentComponent = () => {
   // fc_container
@@ -28,7 +24,6 @@ export const TermContentComponent = () => {
             <GalleryComponent url={term}></GalleryComponent>
             <GalleryComponent url={term2}></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

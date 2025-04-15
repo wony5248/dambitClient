@@ -12,11 +12,7 @@ import special3 from "assets/special3.jpeg";
 import special4 from "assets/special4.jpeg";
 import special5 from "assets/special5.png";
 
-import {
-  BottomNavComponent,
-  ContentBoxComponent,
-  GalleryComponent,
-} from "./ContentComponent";
+import { ContentBoxComponent, GalleryComponent } from "./ContentComponent";
 
 export const SpecialContentContainerComponent = () => {
   // fc_container
@@ -34,7 +30,6 @@ export const SpecialContentContainerComponent = () => {
             <GalleryComponent url={special4}></GalleryComponent>
             <GalleryComponent url={special5}></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

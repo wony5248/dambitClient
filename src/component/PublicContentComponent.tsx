@@ -26,11 +26,7 @@ import public17 from "assets/public17.jpeg";
 import public18 from "assets/public18.jpeg";
 import public19 from "assets/public19.jpeg";
 
-import {
-  BottomNavComponent,
-  ContentBoxComponent,
-  GalleryComponent,
-} from "./ContentComponent";
+import { ContentBoxComponent, GalleryComponent } from "./ContentComponent";
 
 export const PublicContentContainerComponent = () => {
   // fc_container
@@ -62,7 +58,6 @@ export const PublicContentContainerComponent = () => {
             <GalleryComponent url={public18}></GalleryComponent>
             <GalleryComponent url={public19}></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

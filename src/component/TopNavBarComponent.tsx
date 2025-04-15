@@ -32,7 +32,7 @@ export const tabs = [
   "public",
   "private",
   "special",
-  // "reservation",
+  // "faq",
   "direction",
   "gallery",
   "term",
@@ -44,7 +44,7 @@ export const tabNames = [
   "퍼블릭[그룹]투어",
   "프라이빗투어",
   "스페셜투어",
-  // "예약신청/FAQ",
+  // "FAQ",
   "오시는길",
   "요트 갤러리",
   "이용약관",
@@ -62,7 +62,7 @@ export const TopNavComponent: React.FC = () => {
   };
 
   const DrawerList = (
-    <div style={{ backgroundColor: "#faf0f0", height: "100%" }}>
+    <div style={{ backgroundColor: "#f9f5eb", height: "100%" }}>
       <Box
         sx={{ width: 250 }}
         role="presentation"
@@ -116,7 +116,7 @@ export const TopNavComponent: React.FC = () => {
       style={{
         width: "100%",
         height: "50px",
-        backgroundColor: "#ffa099",
+        backgroundColor: "#4c6e91",
         display: "flex",
         alignItems: "center",
       }}
@@ -171,8 +171,8 @@ export const TopNavComponent: React.FC = () => {
                                   fontSize: "16px",
                                   color:
                                     url[url.length - 1] === tab
-                                      ? "#824b4b"
-                                      : "black",
+                                      ? "black"
+                                      : "white",
                                 }}
                               >
                                 {tabNames[idx]}

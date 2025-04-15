@@ -18,6 +18,7 @@ const App = () => {
         position: "relative",
         minWidth: width > 768 ? "1280px" : "auto",
         height: "100%",
+        minHeight: "100%",
         backgroundColor: "#000",
         margin: "0",
         padding: "0",

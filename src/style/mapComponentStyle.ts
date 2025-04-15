@@ -6,7 +6,7 @@ export const locationTextStyle = css`
   overflow: hidden;
   margin-top: 3px;
   letter-spacing: -1px;
-  color: #ffa099 !important;
+  color: #4c6e91 !important;
 `;
 
 export const locationBtnDivStyle = css`
@@ -31,41 +31,20 @@ export const locationLinkStyle = css`
   line-height: 40px;
   color: #fff;
   text-align: center;
-  background-color: #ffa099 !important;
+  background-color: #4c6e91 !important;
 `;
 
 export const locationFindLoadStyle = css`
-  margin: 12px 5px 0 0;
   font-size: 15px;
-  vertical-align: top;
+  align-items: center;
+  justify-content: space-around;
   color: #fff;
-  display: inline-block;
+  display: flex;
   font-style: normal;
-  line-height: 1;
+  font-weight: bold;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: modoo;
-  &::after {
-    content: "";
-  }
-`;
-
-export const locationViewMapStyle = css`
-  margin: 12px 5px 0 0;
-  font-size: 15px;
-  vertical-align: top;
-  color: #fff;
-  display: inline-block;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: 1px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: modoo;
-  &::after {
-    content: "";
-  }
 `;
 
 export const dlStyle = css`
@@ -99,21 +78,15 @@ export const dtStyle = css`
 
 export const dtSpanStyle = css`
   margin: 2px 9px 0 0;
-  font-size: 17px;
-  color: #c7ccd4;
-  vertical-align: top;
-  display: inline-block;
+  font-size: 15px;
+  display: flex;
+  align-itmes: center;
   font-style: normal;
   line-height: 1;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: modoo;
-  @media (min-width: 768px) {
-    &::after {
-      content: "";
-    }
-  }
   @media (max-width: 768px) {
     margin: 0px;
   }

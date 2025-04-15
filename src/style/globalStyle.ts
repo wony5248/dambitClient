@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 export const themeBackgroundStyle = css`
-  background-color: #ffa099 !important;
+  background-color: #4c6e91 !important;
 `;
 
 export const blindStyle = css`

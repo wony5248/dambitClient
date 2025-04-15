@@ -25,11 +25,7 @@ import gall17 from "assets/gall17.jpeg";
 import gall18 from "assets/gall18.jpeg";
 import gall19 from "assets/gall19.jpeg";
 import gall20 from "assets/gall20.jpeg";
-import {
-  BottomNavComponent,
-  ContentBoxComponent,
-  GalleryComponent,
-} from "./ContentComponent";
+import { ContentBoxComponent, GalleryComponent } from "./ContentComponent";
 
 export const GalleryContentContainerComponent = () => {
   // fc_container
@@ -62,7 +58,6 @@ export const GalleryContentContainerComponent = () => {
             <GalleryComponent url={gall19}></GalleryComponent>
             <GalleryComponent url={gall20}></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

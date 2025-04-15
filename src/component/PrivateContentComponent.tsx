@@ -8,8 +8,7 @@ import {
 import private1 from "assets/private1.jpeg";
 import private2 from "assets/private2.jpeg";
 import private3 from "assets/private3.jpeg";
-import private4 from "assets/private5.jpeg";
-import private5 from "assets/private6.jpeg";
+import private5 from "assets/private5.jpeg";
 import private6 from "assets/private6.jpeg";
 import private7 from "assets/private7.jpeg";
 import private8 from "assets/private8.jpeg";
@@ -24,11 +23,7 @@ import private16 from "assets/private16.jpeg";
 import private17 from "assets/private17.jpeg";
 import private18 from "assets/private18.jpeg";
 import private19 from "assets/private19.jpeg";
-import {
-  BottomNavComponent,
-  ContentBoxComponent,
-  GalleryComponent,
-} from "./ContentComponent";
+import { ContentBoxComponent, GalleryComponent } from "./ContentComponent";
 
 export const PrivateContentContainerComponent = () => {
   // fc_container
@@ -43,7 +38,6 @@ export const PrivateContentContainerComponent = () => {
             <GalleryComponent url={private1}></GalleryComponent>
             <GalleryComponent url={private2}></GalleryComponent>
             <GalleryComponent url={private3}></GalleryComponent>
-            <GalleryComponent url={private4}></GalleryComponent>
             <GalleryComponent url={private5}></GalleryComponent>
             <GalleryComponent url={private6}></GalleryComponent>
             <GalleryComponent url={private7}></GalleryComponent>
@@ -60,7 +54,6 @@ export const PrivateContentContainerComponent = () => {
             <GalleryComponent url={private18}></GalleryComponent>
             <GalleryComponent url={private19}></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

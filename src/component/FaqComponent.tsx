@@ -17,7 +17,7 @@ import {
   tableTypeStyle,
 } from "style/reservationComponentStyle";
 
-export const ReservationComponent = () => {
+export const FaqComponent = () => {
   // fc_container
   return (
     <div css={contentContainerStyle}>

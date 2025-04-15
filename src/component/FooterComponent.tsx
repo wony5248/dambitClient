@@ -61,7 +61,10 @@ export const FooterComponent = () => {
             </ul>
           </div>
           <div css={areaSearchStyle}>
-            <a href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%97%AC%EC%88%98+%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4%40">
+            <a
+              href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%97%AC%EC%88%98+%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4%40"
+              target="_blank"
+            >
               <span css={areaSearchKeywordStyle}>여수 아그리나요트투어@</span>
             </a>
           </div>
@@ -73,7 +76,10 @@ export const FooterComponent = () => {
       <div css={sectionFooterStyle}>
         <div css={footerInnerStyle}>
           <div css={areaSearchStyle}>
-            <a href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%97%AC%EC%88%98+%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4%40">
+            <a
+              href="https://search.naver.com/search.naver?ie=UTF-8&query=%EC%97%AC%EC%88%98+%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4%40"
+              target="_blank"
+            >
               <span css={areaSearchKeywordStyle}>아그리나요트투어@</span>
             </a>
           </div>

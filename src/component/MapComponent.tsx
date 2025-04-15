@@ -21,8 +21,9 @@ import {
   subTitleStyle,
 } from "style/mapComponentStyle";
 import useWindowSize from "hooks/useWindowSize";
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
+import viewSvg from "assets/viewonmap.svg";
+import findSvg from "assets/findload.svg";
 interface NaverStaticMapProps {
   width?: string | number;
   height?: string | number;
@@ -46,11 +47,11 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
   height,
   latitude = 34.7452342,
   longitude = 127.6724058,
-  zoom = 15,
+  zoom = 16,
 }) => {
   const curWidth = useWindowSize();
-  width = curWidth < 768 ? 600 : 1100;
-  height = curWidth < 768 ? 600 : 400;
+  width = curWidth < 768 ? "100%" : 1100;
+  height = curWidth < 768 ? 400 : 400;
 
   const initMap = () => {
     // 추가 옵션 설정
@@ -61,6 +62,8 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
         position: naver.maps.Position.TOP_RIGHT,
       },
       center: new naver.maps.LatLng(latitude, longitude),
+      scrollWheel: false,
+      disableDoubleClickZoom: true,
       zoom,
     };
 
@@ -102,8 +105,7 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
         </h3>
         <div css={innerContentStyle}>
           <ContentBoxComponent isMargin={true}>
-            {<div id="map" style={{ width: "100%", height: "400px" }}></div>}
-            <div></div>
+            {<div id="map" style={{ width, height }}></div>}
           </ContentBoxComponent>
           <ContentBoxComponent>
             {curWidth < 768 ? (
@@ -121,18 +123,24 @@ export const MapComponent: React.FC<NaverStaticMapProps> = ({
                 </p>
                 <div>
                   <a
-                    href="https://map.naver.com/p/directions/-/14212476.9395566,4129230.9412352,%EC%97%AC%EC%88%98%20%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%20%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4,1728293137,PLACE_POI/-/transit?c=20.00,0,0,0,dh"
-                    target="_blank"
-                    css={locationLinkStyle}
-                  >
-                    <span css={locationFindLoadStyle}></span>길찾기
-                  </a>
-                  <a
                     href="https://map.naver.com/p/entry/place/1728293137?c=20.00,0,0,0,dh"
                     target="_blank"
                     css={locationLinkStyle}
                   >
-                    <span css={locationFindLoadStyle}></span>지도에서 보기
+                    <span css={locationFindLoadStyle}>
+                      <img src={viewSvg} alt="" />
+                      지도에서 보기
+                    </span>
+                  </a>
+                  <a
+                    href="https://map.naver.com/p/directions/-/14212476.9395566,4129230.9412352,%EC%97%AC%EC%88%98%20%EC%95%84%EA%B7%B8%EB%A6%AC%EB%82%98%20%EC%9A%94%ED%8A%B8%ED%88%AC%EC%96%B4,1728293137,PLACE_POI/-/transit?c=20.00,0,0,0,dh"
+                    target="_blank"
+                    css={locationLinkStyle}
+                  >
+                    <span css={locationFindLoadStyle}>
+                      <img src={findSvg} alt="" />
+                      길찾기
+                    </span>
                   </a>
                 </div>
               </div>
@@ -185,7 +193,7 @@ export const DlComponent = () => {
                       display: "flex",
                       width: "36px",
                       height: "36px",
-                      backgroundColor: "#faf0f0",
+                      backgroundColor: "white",
                       alignItems: "center",
                       justifyContent: "center",
                       border: "1px solid gray",
@@ -225,7 +233,7 @@ export const DlComponent = () => {
                       display: "flex",
                       width: "36px",
                       height: "36px",
-                      backgroundColor: "#faf0f0",
+                      backgroundColor: "white",
                       alignItems: "center",
                       justifyContent: "center",
                       borderTop: "1px solid gray",
@@ -247,13 +255,12 @@ export const DlComponent = () => {
                         stroke-linejoin="round"
                       ></g>
                       <g id="SVGRepo_iconCarrier">
-                        {" "}
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
                           d="M20.8103 5.94919C21.5951 4.19841 19.8016 2.40485 18.0508 3.18969L3.64527 9.64735C1.52435 10.5981 1.43336 13.5756 3.49228 14.6541L6.508 16.2337C7.04568 16.5154 7.48464 16.9543 7.76628 17.492L9.34594 20.5077C10.4244 22.5666 13.4019 22.4757 14.3527 20.3547L20.8103 5.94919Z"
                           fill="#000000"
-                        ></path>{" "}
+                        ></path>
                       </g>
                     </svg>
                   </span>
@@ -392,7 +399,7 @@ export const DlComponent = () => {
     <div>
       <dl css={dlStyle}>
         <dt css={dtStyle}>
-          <span css={dtSpanStyle}></span>오시는길
+          <span css={dtSpanStyle}>오시는길</span>
         </dt>
         <dd css={ddStyle}>
           <span style={{ display: "block" }}>
@@ -414,7 +421,7 @@ export const DlComponent = () => {
       </dl>
       <dl css={dlStyle}>
         <dt css={dtStyle}>
-          <span css={dtSpanStyle}></span>이용시간
+          <span css={dtSpanStyle}>이용시간</span>
         </dt>
         <dd css={ddStyle}>
           <span style={{ display: "block" }}>
@@ -426,7 +433,7 @@ export const DlComponent = () => {
       </dl>
       <dl css={dlStyle}>
         <dt css={dtStyle}>
-          <span css={dtSpanStyle}></span>전화번호
+          <span css={dtSpanStyle}>전화번호</span>
         </dt>
         <dd css={ddStyle}>
           <span style={{ display: "block" }}>010-2648-5000</span>
@@ -434,7 +441,7 @@ export const DlComponent = () => {
       </dl>
       <dl css={dlStyle}>
         <dt css={dtStyle}>
-          <span css={dtSpanStyle}></span>이용안내
+          <span css={dtSpanStyle}>이용안내</span>
         </dt>
         <dd css={ddStyle}>
           <span style={{ display: "block" }}>
@@ -445,7 +452,7 @@ export const DlComponent = () => {
       </dl>
       <dl css={dlStyle}>
         <dt css={dtStyle}>
-          <span css={dtSpanStyle}></span>사업자정보
+          <span css={dtSpanStyle}>사업자정보</span>
         </dt>
         <dd css={ddStyle} style={{ width: "360px" }}>
           <span style={{ display: "block" }}>

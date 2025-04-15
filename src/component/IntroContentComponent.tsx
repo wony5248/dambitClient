@@ -15,7 +15,6 @@ import {
 } from "style/contentComponentStyle";
 import {} from "style/topNavBarStyle";
 import yachtIntro from "assets/yachtIntro.png";
-import { BottomNavComponent } from "./ContentComponent";
 
 export const IntroContentContainerComponent = () => {
   // fc_container
@@ -32,7 +31,6 @@ export const IntroContentContainerComponent = () => {
           <ContentBoxComponent isMargin={true}>
             <GalleryComponent></GalleryComponent>
           </ContentBoxComponent>
-          <BottomNavComponent></BottomNavComponent>
         </div>
       </div>
     </div>

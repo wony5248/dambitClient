@@ -4,7 +4,7 @@ export const topNavDivStyle = css`
   position: relative;
   z-index: 9999;
   border-bottom: 1px solid #ebebeb;
-  background-color: #faf0f0;
+  background-color: #0a2342;
 `;
 
 export const topNavStickyStyle = css`
@@ -12,6 +12,7 @@ export const topNavStickyStyle = css`
   right: 0;
   left: 0;
   top: 0;
+  min-width: 1280px;
 `;
 
 export const headerSubMenuWrap = css`
@@ -22,8 +23,10 @@ export const headerSubMenuWrap = css`
   text-align: center;
 `;
 
+// topnavbar bg
 export const sectionHeaderWrapStyle = css`
-  background-color: #faf0f0;
+  background-color: #4c6e91;
+  font-color: white;
 `;
 
 export const sectionHeaderStyle = css`
@@ -68,7 +71,7 @@ export const siteNameStyle = css`
   font-weight: 400;
   line-height: 1;
   letter-spacing: -1.2px;
-  color: #111;
+  color: #ffffff;
   vertical-align: top;
   word-wrap: break-word;
   word-break: break-all;

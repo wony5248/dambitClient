@@ -5,7 +5,6 @@ import {
   btnIcStyle,
   inStyle,
   btnTextStyle,
-  icStyle,
   btnBackGroundBeforeStyle,
   componentBoxStyle,
   componentTopBoxStyle,
@@ -17,31 +16,51 @@ import {
   maskBgStyle,
 } from "style/contentComponentStyle";
 
+import publicSvg from "assets/bottompublic.svg";
+import specialSvg from "assets/bottomspecial.svg";
+import naverSvg from "assets/bottomreservation.svg";
+import kakaoSvg from "assets/bottomkakao.svg";
+import gallerySvg from "assets/bottomgallery.svg";
+import navigateSvg from "assets/bottomnavigate.svg";
+
 export type LinkProps = {
   texts: number[];
 };
 
 export const txtMap: { [key: number]: string } = {
   0: "",
-  1: "DAY TOUR",
-  2: "PRIVATE TOUR",
-  3: "SPECIAL TOUR",
-  4: "예약/FAQ",
-  5: "오시는 길",
-  6: "요트 갤러리",
+  1: "퍼블릭투어",
+  2: "스페셜투어",
+  3: "네이버예약",
+  4: "카톡상담",
+  5: "요트갤러리",
+  6: "오시는 길",
   7: "이용약관",
 };
 
 export const urlMap: { [key: number]: string } = {
   0: "",
   1: "public",
-  2: "private",
-  3: "special",
-  4: "reservation",
-  5: "direction",
-  6: "gallery",
+  2: "special",
+  3: "https://booking.naver.com/booking/6/bizes/147337",
+  4: "https://pf.kakao.com/_WxmEUC",
+  5: "gallery",
+  6: "direction",
   7: "term",
 };
+
+export const svgMap: { [key: number]: string } = {
+  0: "",
+  1: publicSvg,
+  2: specialSvg,
+  3: naverSvg,
+  4: kakaoSvg,
+  5: gallerySvg,
+  6: navigateSvg,
+  7: "",
+};
+
+const newWindowArr = ["네이버예약", "카톡상담"];
 
 export type imgProps = {
   url: string;
@@ -80,6 +99,7 @@ export const BottomLinkComponent = (props: LinkProps) => {
     <div css={btnWrapStyle}>
       <ul style={{ margin: "0", padding: "0" }} css={btnThemeV2Style}>
         {props.texts.map((item: number, idx: number) => {
+          const newWindow = newWindowArr.includes(txtMap[item]) ? true : false;
           return (
             <li
               key={idx}
@@ -90,18 +110,14 @@ export const BottomLinkComponent = (props: LinkProps) => {
               }
             >
               <a
-                href={
-                  urlMap[item] === "reservation"
-                    ? "https://map.naver.com/p/entry/place/1728293137?lng=127.6728526&lat=34.7446273&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F6%2Fbizes%2F147337%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh"
-                    : `/${urlMap[item]}`
-                }
-                target={urlMap[item] === "reservation" ? "_blank" : "_self"}
+                href={newWindow ? urlMap[item] : `/${urlMap[item]}`}
+                target={newWindow ? "_blank" : "_self"}
                 css={btnIcStyle}
               >
                 <div css={inStyle}>
-                  <span css={btnTextStyle}>{txtMap[item]}</span>
-                  <span css={icStyle}>
-                    <span></span>
+                  <span css={btnTextStyle}>
+                    <img src={svgMap[item]} alt="" />
+                    {txtMap[item]}
                   </span>
                 </div>
               </a>
@@ -144,7 +160,7 @@ export const GalleryComponent = (props: imgProps) => {
 
 export const DivisionComponent = () => {
   return (
-    <div style={{ backgroundColor: "#faf0f0" }}>
+    <div style={{ backgroundColor: "#f9f5eb" }}>
       <div style={{ width: "100%", height: "10px" }}></div>
     </div>
   );

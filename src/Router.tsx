@@ -3,7 +3,7 @@ import { HomeContentContainerComponent } from "component/HomeContentComponent";
 import { IntroContentContainerComponent } from "component/IntroContentComponent";
 import { PrivateContentContainerComponent } from "component/PrivateContentComponent";
 import { PublicContentContainerComponent } from "component/PublicContentComponent";
-import { ReservationComponent } from "component/ReservationComponent";
+import { FaqComponent } from "component/FaqComponent";
 import { SpecialContentContainerComponent } from "component/SpecialContentComponent";
 import { TermContentComponent } from "component/TermComponent";
 import { JSX, Suspense } from "react";
@@ -48,10 +48,7 @@ const Router = (): JSX.Element => {
               <SpecialContentContainerComponent></SpecialContentContainerComponent>
             }
           ></Route>
-          <Route
-            path="/reservation"
-            element={<ReservationComponent></ReservationComponent>}
-          ></Route>
+          <Route path="/faq" element={<FaqComponent></FaqComponent>}></Route>
           <Route
             path="/direction"
             element={<MapComponent></MapComponent>}

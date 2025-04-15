@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 export const footerStyle = css`
   position: relative;
   z-index: 100;
-  background-color: #824b4b;
+  background-color: #d6ccc2;
 `;
 
 export const sectionFooterStyle = css`
@@ -37,11 +37,11 @@ export const areaSearchStyle = css`
   min-width: 222px;
   height: 45px;
   margin: 2px 0 28px;
-  border: 1px solid #fff;
+  border: 1px solid #222222;
   line-height: 45px;
   letter-spacing: -0.8px;
   font-size: 18px;
-  color: #fff;
+  color: #222222;
   @media (max-width: 768px) {
     min-width: 140px;
     font-size: 12px;
@@ -64,7 +64,7 @@ export const areaListInfoLiStyle = css`
   display: inline-block;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #fff;
+  color: #222222;
   letter-spacing: -0.8px;
   line-height: 20px;
   white-space: nowrap;
@@ -74,7 +74,7 @@ export const areaListInfoLiStyle = css`
       width: 1px;
       height: 12px;
       margin: 4px 8px 0 6px;
-      background-color: #fff;
+      background-color: #222222;
       vertical-align: top;
       content: "";
     }
