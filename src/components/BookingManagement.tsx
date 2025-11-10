@@ -45,14 +45,14 @@ const serviceNames: Record<string, string> = {
 
 export function BookingManagement() {
   const [bookings, setBookings] = useState<Booking[]>([]);
-
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     loadBookings();
   }, []);
 
   const loadBookings = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
+      const res = await fetch(`${API_URL}/bookings`, {
         method: "GET",
       });
       const bookings = await res.json();
