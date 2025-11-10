@@ -1,9 +1,11 @@
-import { Suspense } from "react";
+import { StrictMode } from "react";
+import "react-day-picker/dist/style.css";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "./App.tsx";
+import "./styles/globals.css";
 
 createRoot(document.getElementById("root")!).render(
-  <Suspense fallback={<div>Loading...</div>}>
-    <App></App>
-  </Suspense>
+  <StrictMode>
+    <App />
+  </StrictMode>
 );
