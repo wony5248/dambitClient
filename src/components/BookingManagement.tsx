@@ -52,7 +52,7 @@ export function BookingManagement() {
 
   const loadBookings = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/bookings`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
         method: "GET",
       });
       const bookings = await res.json();
@@ -73,9 +73,12 @@ export function BookingManagement() {
 
   const deleteBooking = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/bookings/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/bookings/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!res.ok) throw new Error("서버 에러");
       setBookings((prev) => prev.filter((b) => b.id !== id));
       toast.success("예약이 삭제되었습니다.");

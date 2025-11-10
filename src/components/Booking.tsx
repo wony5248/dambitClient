@@ -70,7 +70,7 @@ export function Booking() {
   // ✅ 예약 목록 불러오기 함수
   const loadBookings = async () => {
     try {
-      const res = await fetch("http://localhost:3000/bookings");
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/bookings`);
       const data = await res.json();
 
       data.sort((a: BookingItem, b: BookingItem) => {
@@ -113,7 +113,7 @@ export function Booking() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/bookings", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
