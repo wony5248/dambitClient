@@ -193,39 +193,37 @@ export function Booking() {
                     >
                       ✂️ 커트
                     </ListSubheader>
+                    <MenuItem value="앞머리 컷">앞머리 컷 (3,000원)</MenuItem>
+                    <MenuItem value="학생 컷">학생 커트 (17,000원)</MenuItem>
                     <MenuItem value="남성 컷">남성 컷 (22,000원)</MenuItem>
+                    <MenuItem value="여성 컷">여성 컷 (27,000원)</MenuItem>
                     <MenuItem value="남성 스켈프컷">
                       남성 스켈프컷 (30,000원)
                     </MenuItem>
-                    <MenuItem value="여성 컷">여성 컷 (27,000원)</MenuItem>
-                    <MenuItem value="학생 컷">학생 커트 (17,000원)</MenuItem>
-                    <MenuItem value="앞머리 컷">앞머리 컷 (3,000원)</MenuItem>
-
                     <ListSubheader
                       sx={{ fontWeight: "bold", fontSize: "1.1rem" }}
                     >
                       🎨 염색
                     </ListSubheader>
-                    <MenuItem value="전체 염색">전체 염색 (95,000원)</MenuItem>
                     <MenuItem value="새치(뿌리) 염색">
                       새치(뿌리) 염색 (65,000원)
                     </MenuItem>
-
+                    <MenuItem value="전체 염색">전체 염색 (95,000원)</MenuItem>
                     <ListSubheader
                       sx={{ fontWeight: "bold", fontSize: "1.1rem" }}
                     >
                       ✨ 펌
                     </ListSubheader>
+                    <MenuItem value="앞머리펌">
+                      앞머리펌(커트는 별도입니다.) (25,000원)
+                    </MenuItem>
                     <MenuItem value="일반펌">일반펌 (65,000원)</MenuItem>
                     <MenuItem value="볼륨펌">볼륨펌 (75,000원)</MenuItem>
                     <MenuItem value="드라이펌">드라이펌 (85,000원)</MenuItem>
                     <MenuItem value="크리닉펌">크리닉펌 (100,000원)</MenuItem>
-                    <MenuItem value="매직펌">매직펌 (150,000원)</MenuItem>
                     <MenuItem value="셋팅펌">셋팅펌 (130,000원)</MenuItem>
+                    <MenuItem value="매직펌">매직펌 (150,000원)</MenuItem>
                     <MenuItem value="매직셋팅">매직셋팅 (250,000원)</MenuItem>
-                    <MenuItem value="앞머리펌">
-                      앞머리펌(커트는 별도입니다.) (25,000원)
-                    </MenuItem>
                     <ListSubheader
                       sx={{ fontWeight: "bold", fontSize: "1.1rem" }}
                     >

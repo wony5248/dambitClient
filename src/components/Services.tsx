@@ -23,11 +23,11 @@ const services = [
     description: "얼굴형과 헤어 스타일에 맞는 맞춤 커트",
     price: "3,000원~",
     details: [
-      { name: "남성 컷", price: "22,000원" },
-      { name: "남성 스켈프컷", price: "30,000원" },
-      { name: "여성 컷", price: "27,000원" },
-      { name: "학생 컷", price: "17,000원" },
       { name: "앞머리 컷", price: "3,000원" },
+      { name: "학생 컷", price: "17,000원" },
+      { name: "남성 컷", price: "22,000원" },
+      { name: "여성 컷", price: "27,000원" },
+      { name: "남성 스켈프컷", price: "30,000원" },
     ],
   },
   {
@@ -47,14 +47,14 @@ const services = [
     price: "20,000원~",
     details: [
       { name: "다운펌 (커트는 별도입니다.)", price: "20,000원" },
+      { name: "앞머리펌(커트는 별도입니다.)", price: "25,000원" },
       { name: "일반펌", price: "65,000원" },
       { name: "볼륨펌", price: "75,000원" },
       { name: "드라이펌", price: "85,000원" },
       { name: "크리닉펌", price: "100,000원" },
-      { name: "매직펌", price: "150,000원" },
       { name: "셋팅펌", price: "130,000원" },
+      { name: "매직펌", price: "150,000원" },
       { name: "매직셋팅", price: "250,000원" },
-      { name: "앞머리펌(커트는 별도입니다.)", price: "25,000원" },
     ],
   },
   {
