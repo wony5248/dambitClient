@@ -21,7 +21,7 @@ const services = [
     icon: Scissors,
     title: "커트",
     description: "얼굴형과 헤어 스타일에 맞는 맞춤 커트",
-    price: "22,000원~",
+    price: "3,000원~",
     details: [
       { name: "남성 컷", price: "22,000원" },
       { name: "남성 스켈프컷", price: "30,000원" },
@@ -44,7 +44,7 @@ const services = [
     icon: Sparkles,
     title: "펌",
     description: "볼륨펌, 웨이브펌 등 다양한 스타일",
-    price: "65,000원~",
+    price: "20,000원~",
     details: [
       { name: "다운펌 (커트는 별도입니다.)", price: "20,000원" },
       { name: "일반펌", price: "65,000원" },
@@ -74,7 +74,7 @@ const services = [
     description: "특별한 날을 위한 완벽한 스타일링",
     price: "15,000원~",
     details: [
-      { name: "[피로야 가라! 만원의 행복] 힐링 샴푸", price: "20,000원" },
+      { name: "[피로야 가라! 만원의 행복] 힐링 샴푸", price: "15,000원" },
       { name: "[오늘의 주인공] 드라이", price: "25,000원" },
     ],
   },

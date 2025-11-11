@@ -245,7 +245,7 @@ export function Booking() {
                     >
                       💨 스타일링
                     </ListSubheader>
-                    <MenuItem value="힐링 샴푸">힐링 샴푸 (20,000원)</MenuItem>
+                    <MenuItem value="힐링 샴푸">힐링 샴푸 (15,000원)</MenuItem>
                     <MenuItem value="드라이">드라이 (25,000원)</MenuItem>
                   </Select>
                 </FormControl>
